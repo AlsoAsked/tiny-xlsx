@@ -1,7 +1,7 @@
-const TinyXLSX = require('.');
-const tap = require('tap');
-const XLSX = require('xlsx');
-const fs = require('fs');
+import TinyXLSX from './src/index.js';
+import tap from 'tap';
+import XLSX from 'xlsx';
+import fs from 'fs';
 
 let data1 = [
 	{ title: 'Test1' , data: [

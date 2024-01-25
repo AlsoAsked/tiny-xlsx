@@ -1,13 +1,13 @@
 {
   "name": "tiny-xlsx",
   "version": "1.0.5",
-  "type": "commonjs",
+  "type": "module",
   "description": "Simple XLSX generator",
   "module": "src/index.js",
   "main": "tiny-xlsx.js",
   "scripts": {
-    "test": "rollup -c rollup.config.mjs && tap test.js",
-    "build": "rollup -c rollup.config.mjs",
+    "test": "rollup -c rollup.config.js && tap test.js",
+    "build": "rollup -c rollup.config.js",
     "cover": "tap test.js --coverage --coverage-report=html"
   },
   "author": "FlamingTempura",
