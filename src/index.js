@@ -1,10 +1,6 @@
 import JSZip from 'jszip';
 
-let isNode = typeof process !== 'undefined',
-	fs;
-if (isNode) {
-	fs = require('fs');
-}
+let isNode = typeof process !== 'undefined';
 
 const RELS_XML = () => `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 	<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
@@ -228,6 +224,9 @@ export const generate = (sheets) => {
 		},
 		async write (filename) {
 			if (!isNode) { throw new Error('write not supported on this platform'); }
+
+			const fs = await import('fs');
+
 			return await new Promise(resolve => {
 				zip.generateNodeStream({ type: 'nodebuffer', streamFiles: true })
 					.pipe(fs.createWriteStream(filename))
