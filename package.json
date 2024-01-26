@@ -13,6 +13,7 @@
   "author": "FlamingTempura",
   "license": "MIT",
   "dependencies": {
+    "entities": "^4.5.0",
     "jszip": "3.2.2"
   },
   "devDependencies": {
