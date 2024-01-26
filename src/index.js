@@ -1,5 +1,5 @@
 import JSZip from 'jszip';
-import { encodeXML } from 'entities';
+import { escapeUTF8 } from 'entities';
 
 let isNode = typeof process !== 'undefined';
 
@@ -182,7 +182,7 @@ export const generate = (sheets) => {
 					value = workbook.strings.indexOf(cell);
 					workbook.stringCount++;
 					if (value === -1) {
-						workbook.strings.push(encodeXML(cell));
+						workbook.strings.push(escapeUTF8(cell));
 						value = workbook.strings.length - 1;
 					}
 				}
