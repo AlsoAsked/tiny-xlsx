@@ -192,7 +192,13 @@ export const generate = (sheets) => {
 		}
 
 		let extent = toAlpha(colCount) + rowCount;
-		workbook.sheets.push({ id, rId, title, rows, extent });
+		workbook.sheets.push({
+			id,
+			rId,
+			title: escapeUTF8(title),
+			rows,
+			extent,
+		});
 	}
 
 	var zip = new JSZip();
