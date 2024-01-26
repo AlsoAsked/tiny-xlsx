@@ -8,6 +8,7 @@ const RELS_XML = () => `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 		<Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/>
 		<Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/>
 		<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/>
+		<Relationship Id="rId4" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/theme" Target="theme/theme1.xml"/>
 	</Relationships>`;
 
 const APP_XML = workbook => `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -164,7 +165,7 @@ export const generate = (sheets) => {
 	let i = 0;
 	for (let { title, data } of sheets) {
 		let id = ++i,
-			rId = `rId${i + 2}`,
+			rId = `rId${i + 3}`,
 			colCount = 1,
 			rowCount = data.length,
 			rows = [];
