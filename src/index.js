@@ -19,7 +19,7 @@ const APP_XML = workbook => `<?xml version="1.0" encoding="UTF-8" standalone="ye
 		<DocSecurity>0</DocSecurity>
 		<ScaleCrop>false</ScaleCrop>
 		<HeadingPairs>
-			<vt:vector size="${workbook.sheets.length}" baseType="variant">
+			<vt:vector size="2" baseType="variant">
 				<vt:variant>
 					<vt:lpstr>Worksheets</vt:lpstr>
 				</vt:variant>
