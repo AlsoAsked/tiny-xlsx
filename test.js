@@ -24,43 +24,12 @@ let loadXLSX = filename => {
 	}));
 };
 
-tap.test('it should write a valid xlsx spreadsheet', async t => {
+tap.test('it should generate a valid spreadsheet', async t => {
 	for (let data of [data1, data2]) {
-		await TinyXLSX.generate(data).write('tmp.xlsx');
+		let result = TinyXLSX.generate(data);
+		fs.writeFileSync('tmp.xlsx', result);
 		let worksheets = loadXLSX('tmp.xlsx');
 		t.match(data, worksheets);
 		fs.unlinkSync('tmp.xlsx');
 	}
 });
-
-tap.test('it should stream a valid xlsx spreadsheet', async t => {
-	for (let data of [data1, data2]) {
-		await new Promise(resolve => {
-			TinyXLSX.generate(data).stream()
-				.pipe(fs.createWriteStream('tmp.xlsx'))
-				.on('finish', () => resolve());
-		});
-		let worksheets = loadXLSX('tmp.xlsx');
-		t.match(data, worksheets);
-		fs.unlinkSync('tmp.xlsx');
-	}
-});
-
-tap.test('it should generate a valid base64 spreadsheet', async t => {
-	for (let data of [data1, data2]) {
-		let base64 = await TinyXLSX.generate(data).base64();
-		fs.writeFileSync('tmp.xlsx', Buffer.from(base64, 'base64'));
-		let worksheets = loadXLSX('tmp.xlsx');
-		t.match(data, worksheets);
-		fs.unlinkSync('tmp.xlsx');
-	}
-});
-
-// tap.test('it should generate a valid blob spreadsheet', async t => {
-// 	for (let data of [data1, data2]) {
-// 		await TinyXLSX.generate(data).blob();
-// 		// let worksheets = loadXLSX('tmp.xlsx');
-// 		// t.match(data, worksheets);
-// 		// fs.unlinkSync('tmp.xlsx');
-// 	}
-// });
