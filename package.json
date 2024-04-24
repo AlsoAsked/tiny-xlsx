@@ -5,6 +5,9 @@
   "description": "Simple XLSX generator",
   "module": "dist/tiny-xlsx.js",
   "main": "dist/tiny-xlsx.js",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "test": "tap test.ts",
     "build": "tsc",
