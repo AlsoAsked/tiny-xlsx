@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+      "baseUrl": ".",
+      "target": "ESNext",
+      "useDefineForClassFields": true,
+      "lib": ["ESNext", "DOM", "DOM.Iterable"],
+      "allowJs": false,
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "strict": true,
+      "strictNullChecks": true,
+      "forceConsistentCasingInFileNames": true,
+      "module": "NodeNext",
+      "moduleResolution": "NodeNext",
+      "noUnusedParameters": true,
+      "noUnusedLocals": true,
+      "noFallthroughCasesInSwitch": true,
+      "allowUnreachableCode": false,
+      "allowUnusedLabels": false,
+      "useUnknownInCatchVariables": true,
+      "sourceMap": true,
+      "outDir": "dist"
+  },
+  "include": ["src/**/*.ts"],
+  "references": [
+    {
+      "path": "./tsconfig.test.json"
+    }
+  ]
+}
