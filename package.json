@@ -1,10 +1,10 @@
 {
   "name": "@alsoasked/tiny-xlsx",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "type": "module",
   "description": "Simple XLSX generator",
-  "module": "dist/tiny-xlsx.js",
-  "main": "dist/tiny-xlsx.js",
+  "module": "dist/index.js",
+  "main": "dist/index.js",
   "files": [
     "/dist"
   ],
