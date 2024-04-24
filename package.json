@@ -1,5 +1,5 @@
 {
-  "name": "tiny-xlsx",
+  "name": "@alsoasked/tiny-xlsx",
   "version": "1.0.6",
   "type": "module",
   "description": "Simple XLSX generator",
