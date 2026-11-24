@@ -24,10 +24,5 @@
       "declaration": true,
       "declarationMap": true
   },
-  "include": ["src/**/*.ts"],
-  "references": [
-    {
-      "path": "./tsconfig.test.json"
-    }
-  ]
+  "include": ["src/**/*.ts"]
 }
